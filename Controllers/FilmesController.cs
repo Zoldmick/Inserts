@@ -1,6 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-
+using Newtonsoft.Json;
 namespace InsertsAPI.Controllers
 {
     [ApiController]
@@ -19,7 +19,7 @@ namespace InsertsAPI.Controllers
                 Console.WriteLine("start");
                 Models.TbFilme ret = conv.ParaTabela(req);
                 ret.DsImagem = fotos.NovoNome(req.Imagem.FileName);
-                Console.WriteLine("table");
+                Console.WriteLine(JsonConvert.SerializeObject(ret));
                 ctx.TbFilme.Add(ret);
                 ctx.SaveChanges();
                 Console.WriteLine("DB");
