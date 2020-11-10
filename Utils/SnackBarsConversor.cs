@@ -9,7 +9,7 @@ namespace InsertsAPI.Utils
             return new Models.TbSnackBar {
                 DsTipoProduto = req.Tipo,
                 DsSabor = req.Sabor,
-                VlPreco = (decimal?) req.Preco,
+                VlPreco = (decimal) req.Preco,
                 DsPeso = req.Peso,
                 NmProduto = req.Nome,
                 DsMarca = req.Marca,
@@ -28,7 +28,7 @@ namespace InsertsAPI.Utils
                 Nome = tb.NmProduto,
                 Marca = tb.DsMarca,
                 Imagem = tb.DsImagem,
-                Estoque = tb.NrQtdEstoque.Value
+                Estoque = tb.NrQtdEstoque
             };
         }
     }

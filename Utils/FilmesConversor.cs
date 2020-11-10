@@ -11,7 +11,7 @@ namespace InsertsAPI.Utils
             return new Models.TbFilme {
                 NmFilme = req.Nome,
                 DsGenero = req.Genero,
-                NrClassficacao = req.Classificacao,
+                NrClassificacao = req.Classificacao,
                 DsSinopse = req.Sinopse,
                 BtEstreia = req.Estreia,
                 NrDuracao = req.Duracao,
@@ -25,11 +25,11 @@ namespace InsertsAPI.Utils
                 Id = tb.IdFilme,
                 Nome = tb.NmFilme,
                 Genero = tb.DsGenero,
-                Classificacao = tb.NrClassficacao.Value,
+                Classificacao = tb.NrClassificacao,
                 Sinopse = tb.DsSinopse,
-                Estreia = tb.BtEstreia.Value,
-                Duracao = tb.NrDuracao.Value,
-                Breve = tb.BtBreve.Value,
+                Estreia = tb.BtEstreia,
+                Duracao = tb.NrDuracao,
+                Breve = tb.BtBreve,
                 Imagem = tb.DsImagem
             };
         }

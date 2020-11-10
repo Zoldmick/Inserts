@@ -11,8 +11,8 @@ namespace InsertsAPI.Utils
             return new Models.Response.CuponsResponse {
                 Codigo = tbs.DsCodigo,
                 Nome = tbs.NmCupom,
-                Desconto = (float) tbs.VlDesconto.Value,
-                Gasto = (float) tbs.VlMinGasto.Value,
+                Desconto = (float) tbs.VlDesconto,
+                Gasto = (float) tbs.VlMinGasto,
                 Id = tbs.IdCupomDesconto
             };
         }
@@ -22,8 +22,8 @@ namespace InsertsAPI.Utils
             return new Models.TbCupomDesconto {
                 DsCodigo = req.Codigo,
                 NmCupom = req.Nome,
-                VlDesconto = (decimal?) req.Desconto,
-                VlMinGasto = (decimal?) req.Gasto
+                VlDesconto = (decimal) req.Desconto,
+                VlMinGasto = (decimal) req.Gasto
             };
         }  
 

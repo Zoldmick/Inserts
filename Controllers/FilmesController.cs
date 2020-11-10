@@ -32,7 +32,7 @@ namespace InsertsAPI.Controllers
             catch(Exception ex)
             {
                 return new BadRequestObjectResult(
-                    new Models.Response.ErrorResponse(400,ex.Message)
+                    new Models.Response.ErrorResponse(400,ex.ToString())
                 );   
             }
         }

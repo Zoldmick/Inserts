@@ -23,7 +23,7 @@ namespace InsertsAPI.Models
         [Column("id_cupom_desconto")]
         public int? IdCupomDesconto { get; set; }
         [Column("id_login")]
-        public int? IdLogin { get; set; }
+        public int IdLogin { get; set; }
         [Column("nm_titular", TypeName = "varchar(100)")]
         public string NmTitular { get; set; }
         [Column("ds_forma_pagamento", TypeName = "varchar(255)")]
@@ -32,8 +32,6 @@ namespace InsertsAPI.Models
         public string DsStatus { get; set; }
         [Column("vl_total", TypeName = "decimal(10,2)")]
         public decimal? VlTotal { get; set; }
-        [Column("vl_troco", TypeName = "decimal(10,2)")]
-        public decimal? VlTroco { get; set; }
 
         [ForeignKey(nameof(IdCupomDesconto))]
         [InverseProperty(nameof(TbCupomDesconto.TbPedido))]
