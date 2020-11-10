@@ -16,17 +16,18 @@ namespace InsertsAPI.Controllers
         {
             try
             {
-                Console.WriteLine("start");
-                Console.WriteLine(JsonConvert.SerializeObject(req));
                 Models.TbFilme ret = conv.ParaTabela(req);
                 ret.DsImagem = fotos.NovoNome(req.Imagem.FileName);
+                
                 Console.WriteLine(JsonConvert.SerializeObject(ret));
+                Console.WriteLine();
+                Console.WriteLine(req);
+                throw new Exception("Para");
+                
                 ctx.TbFilme.Add(ret);
                 ctx.SaveChanges();
-                Console.WriteLine("DB");
-
+                
                 fotos.SalvarFoto(ret.DsImagem,req.Imagem);
-                Console.WriteLine("salvar");
                 return conv.ParaResponse(ret);
             }
             catch(Exception ex)
