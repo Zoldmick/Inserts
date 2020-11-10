@@ -15,6 +15,7 @@ namespace InsertsAPI.Controllers
         {
             try
             {
+                Console.WriteLine(req.Preco);
                 Models.TbCombo combo = conv.ParaTabela(req);
                 combo.DsImagem = fotos.NovoNome(req.Imagem.FileName);
                 
