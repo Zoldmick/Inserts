@@ -6,7 +6,7 @@ namespace InsertsAPI.Utils
         {
             return new Models.TbCombo {
                 NmCombo = req.Nome,
-                VlPreco = (decimal?) req.Preco,
+                VlPreco = (decimal) req.Preco,
                 DsThirdItem = req.Item3,
                 DsSecondaryItem = req.Item2,
                 DsFirstItem = req.Item1,
