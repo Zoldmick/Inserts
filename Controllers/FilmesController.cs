@@ -17,6 +17,7 @@ namespace InsertsAPI.Controllers
             try
             {
                 Console.WriteLine("start");
+                Console.WriteLine(JsonConvert.SerializeObject(req));
                 Models.TbFilme ret = conv.ParaTabela(req);
                 // ret.DsImagem = fotos.NovoNome(req.Imagem.FileName);
                 Console.WriteLine(JsonConvert.SerializeObject(ret));
