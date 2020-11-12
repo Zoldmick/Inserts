@@ -25,8 +25,11 @@ namespace InsertsAPI.Controllers
             {
                 TbTrailer trailer = conv.ParaTabela(req);
                 trailer.NmTrailer = buss.NovoNome(req.Trailer.FileName);
+                Console.WriteLine("salvar no banco");
                 ctx.Add(trailer);
-                ctx.SaveChanges();    
+                ctx.SaveChanges();
+                Console.WriteLine("salvo");
+                Console.WriteLine("Salvar foto");    
                 buss.SalvarFoto(trailer.NmTrailer,req.Trailer);
                 Console.WriteLine("Concluido");
                 return trailer.NmTrailer;
