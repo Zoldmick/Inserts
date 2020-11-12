@@ -12,7 +12,7 @@ namespace InsertsAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class TrailerController : ControllerBase
+    public class TrailersController : ControllerBase
     {
         TrailerConversor conv = new TrailerConversor();
         tcdbContext ctx = new tcdbContext();
@@ -38,5 +38,10 @@ namespace InsertsAPI.Controllers
             }
         }
 
+        [HttpGet("ping")]
+        public string ping()
+        {
+            return "pong";
+        }
     }
 }

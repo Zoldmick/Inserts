@@ -23,7 +23,7 @@ namespace InsertsAPI.Controllers
                 Console.WriteLine();
                 Console.WriteLine(req);
                 throw new Exception("Para");
-                
+
                 ctx.TbFilme.Add(ret);
                 ctx.SaveChanges();
                 
