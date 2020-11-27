@@ -11,13 +11,15 @@ namespace InsertsAPI.Utils
             return new Models.Response.LoginsResponse {
                 Id = tb.IdLogin,
                 Senha = tb.DsSenha,
-                Email = tb.DsEmail
+                Email = tb.DsEmail,
+                Nivel = tb.NrNivel
             };
         }
 
         public Models.TbLogin ParaTabela(Models.Request.LoginsRequest req)
         {
             return new Models.TbLogin {
+                NrNivel = req.Nivel,
                 DsSenha = req.Senha,
                 DsEmail = req.Email
             };
