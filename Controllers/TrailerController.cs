@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 using InsertsAPI.Models;
 using InsertsAPI.Utils;
@@ -23,20 +24,21 @@ namespace InsertsAPI.Controllers
         {
             try
             {
+                
+                Console.WriteLine("start");
                 TbTrailer trailer = conv.ParaTabela(req);
                 trailer.NmTrailer = buss.NovoNome(req.Trailer.FileName);
                 Console.WriteLine("salvar no banco");
                 ctx.Add(trailer);
                 ctx.SaveChanges();
                 Console.WriteLine("salvo");
-                Console.WriteLine("Salvar foto");    
                 buss.SalvarFoto(trailer.NmTrailer,req.Trailer);
                 Console.WriteLine("Concluido");
                 return trailer.NmTrailer;
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Erro {ex.Message}");
                 return new NotFoundResult();
             }
         }

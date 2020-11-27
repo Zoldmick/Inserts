@@ -19,11 +19,6 @@ namespace InsertsAPI.Controllers
                 Models.TbFilme ret = conv.ParaTabela(req);
                 ret.DsImagem = fotos.NovoNome(req.Imagem.FileName);
                 
-                Console.WriteLine(JsonConvert.SerializeObject(ret));
-                Console.WriteLine();
-                Console.WriteLine(req);
-                throw new Exception("Para");
-
                 ctx.TbFilme.Add(ret);
                 ctx.SaveChanges();
                 
